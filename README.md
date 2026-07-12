@@ -1,6 +1,6 @@
 # Booking Platform API
 
-A REST API built with **NestJS** and **TypeScript** for managing services and customer bookings — built as the technical assessment for the EN2H Software Engineer Intern (NestJS) role.
+Booking Platform RESTful API backend built with **NestJS** and **TypeScript** for managing services and customer bookings, featuring **JWT authentication**, **PostgreSQL with TypeORM**, **business-rule validation**, and **Swagger documentation**
 
 ## Project Overview
 
@@ -44,6 +44,31 @@ src/
 3. Copy the example environment file and fill in your own values:
 ```bash
    cp .env.example .env
+```
+
+## Running the Application
+
+```bash
+# Development Mode
+npm run start:dev
+
+```
+
+The API will be available at `http://localhost:3000`.
+
+## Running Migrations
+
+Migrations are used instead of `synchronize: true` to keep schema changes explicit and reviewable.
+
+```bash
+# generate a new migration after changing an entity
+npm run migration:generate -- src/database/migrations/MigrationName
+
+# apply pending migrations
+npm run migration:run
+
+# revert the most recent migration
+npm run migration:revert
 ```
 
 ## Environment Variables
