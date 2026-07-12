@@ -2,7 +2,9 @@ import { Body, Controller, Get, Param, ParseUUIDPipe, Patch, Post } from '@nestj
 import { BookingsService } from './bookings.service';
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingStatusDto } from './dto/update-booking-status.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('bookings')
 @Controller('bookings')
 export class BookingsController {
     constructor(private readonly bookingsService: BookingsService) { }
